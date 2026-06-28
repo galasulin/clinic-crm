@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <!-- panel background so it reads on light & dark themes -->
+  <rect x="0" y="0" width="900" height="600" rx="16" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="899" height="599" rx="16" fill="none" stroke="#e2e8f0"/>
+
+  <text x="450" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Clinic CRM / EMR — Architecture</text>
+  <text x="450" y="62" text-anchor="middle" font-size="13" fill="#64748b">Clean Architecture · bilingual (Hebrew RTL / English) · multi-tenant</text>
+
+  <!-- Clients layer -->
+  <rect x="40" y="90" width="820" height="110" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="60" y="114" font-size="13" font-weight="700" fill="#1d4ed8">CLIENTS (React 19 + TypeScript + MUI, RTL)</text>
+  <rect x="60" y="126" width="240" height="58" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="180" y="151" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Staff Web App</text>
+  <text x="180" y="170" text-anchor="middle" font-size="11" fill="#64748b">login · RBAC-filtered nav</text>
+  <rect x="330" y="126" width="240" height="58" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="450" y="151" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Patient Portal</text>
+  <text x="450" y="170" text-anchor="middle" font-size="11" fill="#64748b">OTP login · remote forms</text>
+  <rect x="600" y="126" width="240" height="58" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="720" y="151" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Public Intake</text>
+  <text x="720" y="170" text-anchor="middle" font-size="11" fill="#64748b">landing pages · leads API</text>
+
+  <!-- arrow -->
+  <line x1="450" y1="200" x2="450" y2="232" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="450,238 445,228 455,228" fill="#94a3b8"/>
+  <text x="468" y="222" font-size="11" fill="#64748b">HTTPS · JWT (+ separate patient-scoped token)</text>
+
+  <!-- API layer -->
+  <rect x="40" y="240" width="820" height="74" rx="12" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="60" y="264" font-size="13" font-weight="700" fill="#6d28d9">API — ASP.NET Core 8 Web API</text>
+  <text x="60" y="294" font-size="12" fill="#475569">Controllers · JWT auth + refresh-token rotation · RBAC policies · audit · tenant (ClinicId) isolation</text>
+
+  <!-- arrow -->
+  <line x1="450" y1="314" x2="450" y2="344" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="450,350 445,340 455,340" fill="#94a3b8"/>
+
+  <!-- Core + Infrastructure -->
+  <rect x="40" y="352" width="400" height="150" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="60" y="376" font-size="13" font-weight="700" fill="#047857">CORE (domain + engines)</text>
+  <text x="60" y="400" font-size="12" fill="#475569">Entities · enums · permissions</text>
+  <text x="60" y="422" font-size="12" fill="#475569">Form Builder + Static Data</text>
+  <text x="60" y="444" font-size="12" fill="#475569">Narrative engine (forms → anamnesis)</text>
+  <text x="60" y="466" font-size="12" fill="#475569">Business rules · pricing</text>
+
+  <rect x="460" y="352" width="400" height="150" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="480" y="376" font-size="13" font-weight="700" fill="#c2410c">INFRASTRUCTURE</text>
+  <text x="480" y="400" font-size="12" fill="#475569">EF Core · migrations · seeders</text>
+  <text x="480" y="422" font-size="12" fill="#475569">Background jobs (queues / retries)</text>
+  <text x="480" y="444" font-size="12" fill="#475569">HMAC-signed outbound webhooks</text>
+  <text x="480" y="466" font-size="12" fill="#475569">Connectors · SMS / WhatsApp</text>
+
+  <!-- arrow to DB -->
+  <line x1="240" y1="502" x2="240" y2="534" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="240,540 235,530 245,530" fill="#94a3b8"/>
+
+  <!-- DB + external -->
+  <rect x="40" y="542" width="400" height="44" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="240" y="569" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">SQL Server (EF Core · soft-delete · audit)</text>
+
+  <rect x="460" y="542" width="400" height="44" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="660" y="569" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">External: SMS · WhatsApp · Webhooks · Ad connectors</text>
+  <line x1="660" y1="502" x2="660" y2="534" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="660,540 655,530 665,530" fill="#94a3b8"/>
+</svg>
