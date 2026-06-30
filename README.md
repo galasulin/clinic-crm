@@ -37,7 +37,7 @@ Clean Architecture split into **Api / Core / Infrastructure**, a React SPA on to
 | **Patients** | Full medical record, visits, collapsible intake sections, smart questionnaires, mailing-consent & referral panels |
 | **Scheduling** | Multi-clinic / rooms / practitioners; daily / weekly (per-therapist) / monthly views; **live updates across users**; per-branch work hours + one-off exceptions; drag-move & drag-resize of appointments **and** blocks; visual allocations defined on the grid; preliminary-check (PTA) columns with computed arrival time; recurring series; **waitlist**; **two-way SMS** confirm/cancel; full Excel export by practitioner & date range |
 | **Tasks & Automation** | Multi-assignee tasks, transfer, dependencies (A blocks B), SLA timers; a **no-code automation builder** (triggers → conditions → actions: reminders, escalation to a team manager, weighted round-robin routing, lead scoring) |
-| **Real-time** | SignalR hub pushes new tasks / reminders and live calendar changes to the right users instantly (no polling) |
+| **Real-time** | System-wide live sync over SignalR: a single EF SaveChanges interceptor broadcasts every entity change to connected clients, so cards, lists, the calendar and forms refresh instantly across users — no polling, no per-screen wiring. Overlapping fields (e.g. a patient-card box and its questionnaire) stay in sync both ways from one source of truth |
 | **CRM — Leads** | Configurable statuses / sources / fields, public intake API, duplicate detection, activity timeline, saved views, campaigns |
 | **Business Partners** | Unified ERP-style card (customer / supplier / lead), lead→customer conversion, price lists & discounts |
 | **Finance** | Procurement cycle + supplier A/P balance |
