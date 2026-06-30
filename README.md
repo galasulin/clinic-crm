@@ -8,15 +8,16 @@ A bilingual (**Hebrew RTL / English**) clinic management platform I designed and
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+![SignalR](https://img.shields.io/badge/SignalR-realtime-0078D7)
 ![Status](https://img.shields.io/badge/status-active%20development-success)
 
 ---
 
 ## 📋 Overview / סקירה
 
-🇬🇧 A management system for a physiotherapy / clinic setting: scheduling, patient records, a smart **intake → clinical narrative** engine, a leads CRM, billing/procurement, a patient self-service portal, and reporting. The guiding idea is **engines over screens** — most clinical features are *composed* from a form builder, lookup data and a narrative engine, instead of being hard-coded.
+🇬🇧 A management system for a physiotherapy / clinic setting: scheduling, patient records, a smart **intake → clinical narrative** engine, a leads CRM, billing/procurement, a patient self-service portal, and reporting. The guiding idea is **engines over screens** — most clinical features are *composed* from a form builder, lookup data and a narrative engine, instead of being hard-coded. It runs **real-time** (live calendar + push notifications over WebSockets) and includes a **no-code automation** builder so non-developers can wire up reminders, escalations and routing.
 
-🇮🇱 מערכת ניהול למרפאה: יומן תורים, תיק מטופל, מנוע **שאלון חכם → אנמנזה קלינית**, CRM לידים, חיוב/רכש, פורטל מטופלים לשירות עצמי, ודוחות. הרעיון המנחה — **מנועים במקום מסכים**: רוב היכולות הקליניות מורכבות ממחולל טפסים, רשימות ערכים ומנוע נרטיב, במקום קוד קשיח.
+🇮🇱 מערכת ניהול למרפאה: יומן תורים, תיק מטופל, מנוע **שאלון חכם → אנמנזה קלינית**, CRM לידים, חיוב/רכש, פורטל מטופלים לשירות עצמי, ודוחות. הרעיון המנחה — **מנועים במקום מסכים**: רוב היכולות הקליניות מורכבות ממחולל טפסים, רשימות ערכים ומנוע נרטיב, במקום קוד קשיח. המערכת עובדת ב**זמן-אמת** (יומן חי + התראות-דחיפה) וכוללת מנוע **אוטומציות ללא-קוד** להגדרת תזכורות, הסלמות וניתוב.
 
 ---
 
@@ -33,24 +34,26 @@ Clean Architecture split into **Api / Core / Infrastructure**, a React SPA on to
 | Domain | Highlights |
 | ------ | ---------- |
 | **Engines** | Form Builder · Static Data (lookups) · Narrative engine (structured answers → Hebrew clinical text with conditionals) |
-| **Patients** | Full medical record, visits, collapsible intake sections, smart questionnaires |
-| **Scheduling** | Multi-clinic / rooms / practitioners, daily & weekly views, status coloring, allocations, preliminary-check (PTA) columns |
+| **Patients** | Full medical record, visits, collapsible intake sections, smart questionnaires, mailing-consent & referral panels |
+| **Scheduling** | Multi-clinic / rooms / practitioners; daily / weekly (per-therapist) / monthly views; **live updates across users**; per-branch work hours + one-off exceptions; drag-move & drag-resize of appointments **and** blocks; visual allocations defined on the grid; preliminary-check (PTA) columns with computed arrival time; recurring series; **waitlist**; **two-way SMS** confirm/cancel; full Excel export by practitioner & date range |
+| **Tasks & Automation** | Multi-assignee tasks, transfer, dependencies (A blocks B), SLA timers; a **no-code automation builder** (triggers → conditions → actions: reminders, escalation to a team manager, weighted round-robin routing, lead scoring) |
+| **Real-time** | SignalR hub pushes new tasks / reminders and live calendar changes to the right users instantly (no polling) |
 | **CRM — Leads** | Configurable statuses / sources / fields, public intake API, duplicate detection, activity timeline, saved views, campaigns |
 | **Business Partners** | Unified ERP-style card (customer / supplier / lead), lead→customer conversion, price lists & discounts |
 | **Finance** | Procurement cycle + supplier A/P balance |
-| **Documents** | Templates, generation, **digital signature** |
-| **Patient Portal** | OTP login, remote questionnaire filling, personal dashboard, staff "send to portal" (SMS / WhatsApp), remote signing |
-| **Reporting** | Report builder (group-by / aggregate / filters), Excel export, pinned dashboard widgets |
+| **Documents** | Templates, generation, **digital signature**, brand-framed printable/downloadable forms |
+| **Patient Portal** | OTP login, **self-booking of free slots**, remote questionnaire filling, personal dashboard, staff "send to portal" (SMS / WhatsApp), remote signing |
+| **Reporting** | Report builder (group-by / aggregate / filters), Excel import & export, manager KPI dashboard, pinned dashboard widgets |
 | **Growth** | Hosted landing-page builder → leads, ad connectors, HMAC-signed outbound webhooks |
-| **Admin** | Visual per-module permission matrix, user / role / group management |
+| **Admin & Security** | Visual per-module permission matrix; user / role / group management; **opt-in 2FA** (TOTP + email OTP); **idle session auto-lock**; editable communication / retention / directory settings |
 
 ---
 
 ## 🛠️ Tech & Engineering
 
-- **Backend:** ASP.NET Core 8 Web API, EF Core, SQL Server, JWT + refresh rotation, RBAC policies.
+- **Backend:** ASP.NET Core 8 Web API, EF Core, SQL Server, JWT + refresh rotation, RBAC policies, **SignalR** (WebSockets) for real-time push, **Hangfire** background jobs (reminders, escalation, retention).
 - **Frontend:** React 19 + TypeScript + Vite + MUI (full RTL) + react-i18next (he/en live switch).
-- **Cross-cutting:** universal audit, global soft-delete, multi-tenant isolation, background job queue with retries.
+- **Cross-cutting:** universal audit, global soft-delete, multi-tenant isolation, background job queue with retries, deny-by-default capability checks down to the field level.
 - **Quality:** GitHub Actions CI (build + tests for backend, build for frontend), EF migrations, unit tests.
 
 ---
