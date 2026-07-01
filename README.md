@@ -41,11 +41,12 @@ Clean Architecture split into **Api / Core / Infrastructure**, a React SPA on to
 | **CRM — Leads** | Configurable statuses / sources / fields, public intake API, duplicate detection, activity timeline, saved views, campaigns |
 | **Business Partners** | Unified ERP-style card (customer / supplier / lead), lead→customer conversion, price lists & discounts |
 | **Finance** | Procurement cycle + supplier A/P balance |
-| **Documents** | Templates, generation, **digital signature**, brand-framed printable/downloadable forms |
+| **Documents** | Templates, generation, multi-party **tamper-evident digital signatures** (SHA-256 fingerprint over the document + signature + signer + trusted server timestamp, with a one-click *verify* that detects any post-signing edit), brand-framed forms rendered to **real PDF** client-side (and emailed as an attachment) |
 | **Patient Portal** | OTP login, **self-booking of free slots**, remote questionnaire filling, personal dashboard, staff "send to portal" (SMS / WhatsApp), remote signing |
-| **Reporting** | Report builder (group-by / aggregate / filters), Excel import & export, manager KPI dashboard, pinned dashboard widgets |
+| **Reporting** | Report builder (group-by / aggregate / filters), Excel import & export, a **live** manager KPI dashboard (funnel, occupancy, no-show rate, task load — auto-refreshing over SignalR), pinned dashboard widgets, a user-activity report + CSV export |
+| **Messaging** | System-wide, in-app-**editable SMS & email templates** with merge tokens, referenced by the automation engine (edit the wording once, every rule updates); **branded, deliverability-focused emails** (inline-CSS RTL HTML + a plain-text alternative + Reply-To to lower spam scores) |
 | **Growth** | Hosted landing-page builder → leads, ad connectors, HMAC-signed outbound webhooks |
-| **Admin & Security** | Visual per-module permission matrix; user / role / group management; **opt-in 2FA** (TOTP + email OTP); **idle session auto-lock**; editable communication / retention / directory settings |
+| **Admin & Security** | Visual **granular permission tree** (module → tab → field, allow/deny per role / group / user, deny-by-default for sensitive actions); user / role / group management; **opt-in 2FA** (TOTP + email OTP); **idle session auto-lock**; a **security / sign-in event log** that records the real reason each login succeeded or failed (the login screen stays generic to prevent account enumeration); editable communication / retention / directory settings |
 
 ---
 
@@ -53,7 +54,8 @@ Clean Architecture split into **Api / Core / Infrastructure**, a React SPA on to
 
 - **Backend:** ASP.NET Core 8 Web API, EF Core, SQL Server, JWT + refresh rotation, RBAC policies, **SignalR** (WebSockets) for real-time push, **Hangfire** background jobs (reminders, escalation, retention).
 - **Frontend:** React 19 + TypeScript + Vite + MUI (full RTL) + react-i18next (he/en live switch).
-- **Cross-cutting:** universal audit, global soft-delete, multi-tenant isolation, background job queue with retries, deny-by-default capability checks down to the field level.
+- **Cross-cutting:** universal audit, multi-tenant isolation, background job queue with retries, deny-by-default capability checks down to the field level.
+- **Data-safety by design:** nothing is ever hard-deleted in normal use — a global soft-delete turns every delete into a recoverable state, surfaced in an **admin recycle bin** (who deleted what, when, with full field values and one-click restore). Destructive actions use a type-to-confirm safeguard and an inline **undo**; the single true "purge" is a dedicated, permission-gated action that only ever removes rows already in the bin.
 - **Quality:** GitHub Actions CI (build + tests for backend, build for frontend), EF migrations, unit tests.
 
 ---
