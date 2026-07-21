@@ -1,9 +1,9 @@
 # 🏥 מערכת CRM / EMR למרפאה — חלון ראווה
 
 <p align="center">
-  <a href="README.md"><img alt="English" src="https://img.shields.io/badge/English-lightgrey?style=for-the-badge"></a>
+  <a href="README.md">🇬🇧 <img alt="English" src="https://img.shields.io/badge/EN%20%C2%B7%20English-lightgrey?style=for-the-badge"></a>
   &nbsp;
-  <a href="README.he.md"><img alt="עברית" src="https://img.shields.io/badge/%D7%A2%D7%91%D7%A8%D7%99%D7%AA-ee2e24?style=for-the-badge"></a>
+  <a href="README.he.md">🇮🇱 <img alt="עברית" src="https://img.shields.io/badge/IL%20%C2%B7%20%D7%A2%D7%91%D7%A8%D7%99%D7%AA-ee2e24?style=for-the-badge"></a>
 </p>
 
 פלטפורמת ניהול מרפאה דו-לשונית (**עברית RTL / אנגלית**) שתכננתי ובניתי — Full-Stack, מבוססת-מנועים, רב-שוכרת (multi-tenant), וכעת גם עם טלפוניה ו-AI.

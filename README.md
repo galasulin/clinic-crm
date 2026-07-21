@@ -1,9 +1,9 @@
 # 🏥 Clinic CRM / EMR — Project Showcase
 
 <p align="center">
-  <a href="README.md"><img alt="English" src="https://img.shields.io/badge/English-2970ff?style=for-the-badge"></a>
+  <a href="README.md">🇬🇧 <img alt="English" src="https://img.shields.io/badge/EN%20%C2%B7%20English-2970ff?style=for-the-badge"></a>
   &nbsp;
-  <a href="README.he.md"><img alt="עברית" src="https://img.shields.io/badge/%D7%A2%D7%91%D7%A8%D7%99%D7%AA-lightgrey?style=for-the-badge"></a>
+  <a href="README.he.md">🇮🇱 <img alt="עברית" src="https://img.shields.io/badge/IL%20%C2%B7%20%D7%A2%D7%91%D7%A8%D7%99%D7%AA-lightgrey?style=for-the-badge"></a>
 </p>
 
 A bilingual (**Hebrew RTL / English**) clinic management platform I designed and built — full-stack, engine-driven, multi-tenant, and now telephony- and AI-enabled.
