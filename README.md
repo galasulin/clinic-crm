@@ -1,5 +1,11 @@
 # 🏥 Clinic CRM / EMR — Project Showcase
 
+<p align="center">
+  <a href="README.md"><img alt="English" src="https://img.shields.io/badge/English-2970ff?style=for-the-badge"></a>
+  &nbsp;
+  <a href="README.he.md"><img alt="עברית" src="https://img.shields.io/badge/%D7%A2%D7%91%D7%A8%D7%99%D7%AA-lightgrey?style=for-the-badge"></a>
+</p>
+
 A bilingual (**Hebrew RTL / English**) clinic management platform I designed and built — full-stack, engine-driven, multi-tenant, and now telephony- and AI-enabled.
 
 > 🔒 **This is a public showcase, not the source.** The code and any real data are kept private. Everything here is a high-level overview; all screenshots use **demo data only**.
@@ -14,11 +20,11 @@ A bilingual (**Hebrew RTL / English**) clinic management platform I designed and
 
 ---
 
-## 📋 Overview / סקירה
+## 📋 Overview
 
-🇬🇧 A management system for a physiotherapy / clinic setting: scheduling, patient records, a smart **intake → clinical narrative** engine, a leads CRM with a **sales pipeline**, quotes/orders + billing, inventory & contracts, a **contact-center / telephony (CTI)** layer, a patient self-service portal, and a **self-service reporting & analytics platform** (report anything, schedule it, share it, ask it in plain language) — with an **AI assist layer** on top. The guiding idea is **engines over screens** — most features are *composed* from a form builder, lookup data and a narrative engine, instead of being hard-coded. It runs **real-time** (live calendar + push notifications over WebSockets), includes a **no-code automation** builder, and is packaged to run **on-premises as a single Windows Service** against a dedicated SQL server.
+A management system for a physiotherapy / clinic setting: scheduling, patient records, a smart **intake → clinical narrative** engine, a leads CRM with a **sales pipeline**, quotes/orders + billing, inventory & contracts, a **contact-center / telephony (CTI)** layer, a patient self-service portal, and a **self-service reporting & analytics platform** (report anything, schedule it, share it, ask it in plain language) — with an **AI assist layer** on top. The guiding idea is **engines over screens** — most features are *composed* from a form builder, lookup data and a narrative engine, instead of being hard-coded. It runs **real-time** (live calendar + push notifications over WebSockets), includes a **no-code automation** builder, and is packaged to run **on-premises as a single Windows Service** against a dedicated SQL server.
 
-🇮🇱 מערכת ניהול למרפאה: יומן תורים, תיק מטופל, מנוע **שאלון חכם → אנמנזה קלינית**, CRM לידים עם **משפך מכירות**, הצעות מחיר/הזמנות וחיוב, מלאי וחוזים, שכבת **מוקד טלפוני (CTI)**, פורטל מטופלים לשירות עצמי, ו**פלטפורמת דוחות ואנליטיקה** (דיווח על כל נתון, תזמון, שיתוף, ו"שאל את הנתונים" בשפה חופשית) — עם שכבת **AI** מעל הכל. הרעיון המנחה — **מנועים במקום מסכים**. המערכת עובדת ב**זמן-אמת**, כוללת מנוע **אוטומציות ללא-קוד**, וארוזה לרוץ **On-Prem כשירות Windows יחיד** מול שרת SQL ייעודי.
+> 🇮🇱 גרסה עברית מלאה: [**README בעברית**](README.he.md)
 
 ---
 
