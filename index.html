@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinic CRM / EMR · Gal Asulin</title>
+<meta name="description" content="Eight screens of a bilingual clinic CRM/EMR, captured from an isolated demo instance seeded with invented data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fa;--surface:#fff;--text:#13202b;--muted:#5b6876;--line:#dde3ea;--brand:#0b6e99;--soft:#e3f1f8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1419;--surface:#141e26;--text:#e6edf2;--muted:#9aa9b6;--line:#26343f;--brand:#5cc2f0;--soft:#13303f}}
+:root[data-theme="dark"]{--bg:#0d1419;--surface:#141e26;--text:#e6edf2;--muted:#9aa9b6;--line:#26343f;--brand:#5cc2f0;--soft:#13303f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:56px 0 18px}
+h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px;line-height:1.15}
+.lead{color:var(--muted);font-size:18px;max-width:780px;margin:0}
+.note{display:inline-block;margin-top:16px;font-size:14.5px;background:var(--soft);color:var(--brand);border-radius:10px;padding:6px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:26px 0 40px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.05)}
+figure button{all:unset;cursor:zoom-in;display:block}
+figure img{width:100%;height:auto;display:block;border-bottom:1px solid var(--line)}
+figcaption{padding:14px 16px}
+figcaption b{display:block;font-size:17px}
+figcaption span{color:var(--muted);font-size:15px}
+figcaption [dir="rtl"]{display:block;margin-top:4px;font-size:14.5px;color:var(--muted)}
+dialog{border:0;padding:0;background:transparent;max-width:96vw}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+dialog img{max-width:96vw;max-height:90vh;border-radius:8px;display:block}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:15px}
+footer a{color:var(--brand);font-weight:600}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Clinic CRM / EMR · screens</h1>
+  <p class="lead">A bilingual (Hebrew RTL / English) CRM, EMR and ERP I designed and built for a multi-branch physiotherapy clinic network: .NET 10 + React 19, engine-driven, real-time. In production since July 2026; the source is private.</p>
+  <span class="note">Every screen here was captured from an isolated local demo instance seeded with invented people and numbers. Outbound SMS, e-mail and WhatsApp were disabled in that instance. Nothing comes from production.</span>
+</header>
+<section class="wrap" style="padding-top:18px">
+  <h2 style="margin:0 0 6px;font-size:26px">Launch trailer <span style="font-size:14px;font-weight:600;color:#b45309;border:1px solid currentColor;border-radius:999px;padding:2px 10px;vertical-align:middle">Preview — work in progress</span></h2>
+  <p style="color:var(--muted);margin:0 0 14px">84 seconds, recorded from the same isolated demo instance (invented data). Subtitles: Hebrew and English.</p>
+  <video controls preload="metadata" playsinline poster="video/AposCRM-trailer-16x9-poster.jpg" style="width:100%;border-radius:14px;border:1px solid var(--line);background:#000">
+    <source src="video/AposCRM-trailer-16x9.mp4" type="video/mp4">
+    <track kind="subtitles" src="video/AposCRM-trailer.he.vtt" srclang="he" label="עברית" default>
+    <track kind="subtitles" src="video/AposCRM-trailer.en.vtt" srclang="en" label="English">
+  </video>
+  <p style="color:var(--muted);font-size:14.5px">Vertical version for phones: <a href="video/AposCRM-trailer-9x16.mp4">9:16 MP4</a></p>
+</section>
+<main class="wrap grid" id="g">
+  <figure><button data-full="assets/screens/01-home_light.webp"><img src="assets/screens/01-home_light.webp" alt="Dashboard: today's appointments, tasks and leads" loading="lazy" width="1600" height="1000"></button><figcaption><b>Dashboard</b><span>Personal start page: today's patients, open tasks, new leads and alerts.</span><span dir="rtl">דאשבורד: התורים, המשימות והלידים של היום</span></figcaption></figure>
+  <figure><button data-full="assets/screens/02-schedule_week_light.webp"><img src="assets/screens/02-schedule_week_light.webp" alt="Weekly appointment calendar by therapist" loading="lazy" width="1600" height="1000"></button><figcaption><b>Calendar</b><span>Week view by therapist, room and branch, with drag-to-reschedule.</span><span dir="rtl">יומן תורים לפי מטפל, חדר וסניף</span></figcaption></figure>
+  <figure><button data-full="assets/screens/03-patient_light.webp"><img src="assets/screens/03-patient_light.webp" alt="Patient card with identity, contact, branch and summary" loading="lazy" width="1600" height="1000"></button><figcaption><b>Patient card</b><span>Identity, contact, assignment, clinical history and a running summary in one place.</span><span dir="rtl">כרטיס מטופל</span></figcaption></figure>
+  <figure><button data-full="assets/screens/04-sales_forecast_light.webp"><img src="assets/screens/04-sales_forecast_light.webp" alt="Sales forecast report with pipeline, weighted forecast and goals" loading="lazy" width="1600" height="1000"></button><figcaption><b>Reports · sales forecast</b><span>Pipeline, weighted forecast by month and stage, and goals per salesperson.</span><span dir="rtl">דוחות: תחזית מכירות</span></figcaption></figure>
+  <figure><button data-full="assets/screens/05-access_light.webp"><img src="assets/screens/05-access_light.webp" alt="Users, roles and permissions screen" loading="lazy" width="1600" height="1000"></button><figcaption><b>Users, roles &amp; permissions</b><span>Users, roles and permission groups, managed in the settings screens.</span><span dir="rtl">משתמשים, תפקידים והרשאות</span></figcaption></figure>
+  <figure><button data-full="assets/screens/06-leads_kanban_light.webp"><img src="assets/screens/06-leads_kanban_light.webp" alt="Leads pipeline as a Kanban board with insights" loading="lazy" width="1600" height="1000"></button><figcaption><b>Leads pipeline</b><span>Kanban by stage with SLA alerts and conversion insights.</span><span dir="rtl">לידים: לוח קנבן ותובנות</span></figcaption></figure>
+  <figure><button data-full="assets/screens/07-gait_compare_light.webp"><img src="assets/screens/07-gait_compare_light.webp" alt="Gait lab: measurements and comparison between visits" loading="lazy" width="1600" height="1000"></button><figcaption><b>Gait lab</b><span>Gait measurements per visit with comparison and progress over time.</span><span dir="rtl">מעבדת הליכה: השוואה בין ביקורים</span></figcaption></figure>
+  <figure><button data-full="assets/screens/08-form_builder_light.webp"><img src="assets/screens/08-form_builder_light.webp" alt="Form builder listing clinical and intake forms" loading="lazy" width="1600" height="1000"></button><figcaption><b>Form builder</b><span>Clinical and intake forms are data, not code: built in the settings screens.</span><span dir="rtl">בונה טפסים</span></figcaption></figure>
+</main>
+<dialog id="d"><img alt=""></dialog>
+<footer class="wrap">Built by <a href="https://github.com/galasulin">Gal Asulin</a>, IT Manager · <a href="https://github.com/galasulin/clinic-crm">clinic-crm</a></footer>
+<script>
+var d=document.getElementById('d'),im=d.querySelector('img');
+document.getElementById('g').addEventListener('click',function(e){var b=e.target.closest('button[data-full]');if(!b)return;im.src=b.dataset.full;im.alt=b.querySelector('img').alt;d.showModal();});
+d.addEventListener('click',function(){d.close();});
+</script>
+</body>
+</html>

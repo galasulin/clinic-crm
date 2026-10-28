@@ -1,0 +1,79 @@
+﻿1
+00:00:00,300 --> 00:00:05,850
+Beat the pain, by walking.
+
+2
+00:00:06,300 --> 00:00:15,850
+Paper. Phone calls. Spreadsheets. Information scattered across systems.
+
+3
+00:00:16,300 --> 00:00:19,850
+Now, one system for the whole clinic.
+
+4
+00:00:20,300 --> 00:00:21,850
+AposCRM.
+
+5
+00:00:22,150 --> 00:00:24,900
+The morning starts on one dashboard.
+
+6
+00:00:25,150 --> 00:00:27,900
+A diary by therapist, room and branch.
+
+7
+00:00:28,150 --> 00:00:30,900
+Who has arrived, and who is already in treatment.
+
+8
+00:00:31,150 --> 00:00:33,900
+One search, and the patient card is open.
+
+9
+00:00:34,150 --> 00:00:36,900
+Every record, under its own problem.
+
+10
+00:00:37,150 --> 00:00:39,900
+Every gait measure, against the norm.
+
+11
+00:00:40,150 --> 00:00:42,900
+A locked PDF, and a Word file to edit.
+
+12
+00:00:43,150 --> 00:00:45,900
+From the first enquiry to a patient.
+
+13
+00:00:46,150 --> 00:00:48,900
+Landing pages by drag and drop, on mobile too.
+
+14
+00:00:49,150 --> 00:00:51,900
+Quotes and treatment packages.
+
+15
+00:00:52,150 --> 00:00:54,900
+A personal portal, with a one time code.
+
+16
+00:00:55,150 --> 00:00:57,900
+Every call, linked to the card.
+
+17
+00:00:58,300 --> 00:01:01,850
+Ninety-seven screens. One system.
+
+18
+00:01:02,150 --> 00:01:08,140
+Every route is checked, two step sign in, and every view is logged.
+
+19
+00:01:08,240 --> 00:01:13,900
+A full backup every night, and a restore that has actually been tested.
+
+20
+00:01:14,300 --> 00:01:23,850
+AposCRM. Now live.
