@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://galasulin.github.io/clinic-crm/"><img src="video/AposCRM-trailer-16x9-poster.jpg" alt="טריילר ההשקה - לחיצה מנגנת בדף החי" width="100%"></a>
-  <br/><sub><b>▶ טריילר ההשקה · Preview — work in progress.</b> לחיצה מנגנת אותו ב<a href="https://galasulin.github.io/clinic-crm/">דף החי</a> (84 שניות, כתוביות בעברית ובאנגלית).</sub>
+  <br/><sub><b>▶ טריילר ההשקה · Preview — work in progress.</b> לחיצה מנגנת אותו ב<a href="https://galasulin.github.io/clinic-crm/">דף החי</a> (2:18 דקות, כיתוב בעברית בתוך הסרטון).</sub>
 </p>
 
 <p align="center">

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://galasulin.github.io/clinic-crm/"><img src="video/AposCRM-trailer-16x9-poster.jpg" alt="Launch trailer - click to play on the live page" width="100%"></a>
-  <br/><sub><b>▶ Launch trailer · Preview — work in progress.</b> Click to play it on the <a href="https://galasulin.github.io/clinic-crm/">live page</a> (84 s, Hebrew / English subtitles).</sub>
+  <br/><sub><b>▶ Launch trailer · Preview — work in progress.</b> Click to play it on the <a href="https://galasulin.github.io/clinic-crm/">live page</a> (2:18, Hebrew captions).</sub>
 </p>
 
 <p align="center">
